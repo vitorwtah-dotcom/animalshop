@@ -51,7 +51,7 @@ async function iniciar( ) {
     try {
         const [usuario] = await db.execute("SELECT id FROM usuario WHERE email = ?", [process.env.ADMIN_EMAIL])
         if (usuario.length === 0) {
-            const senhaHash = await bcrypt.hash(process.env.ADMIN_SENHA, 10)
+            const senhaHash = await bcrypt.hash(process.env.ADMIN_PASSWORD, 10)
             await db.execute ("INSERT INTO usuario (email, senha) VALUES (?,?) ", [process.env.ADMIN_EMAIL, senhaHash]);
             console.log("Admin criado")
         }
