@@ -16,7 +16,7 @@ const ssl = process.env.DB_SSL_CA ? {ca: process.env.DB_SSL_CA.replace(/\\n/g, "
  
 const db = mysql.createPool({
     host: process.env.HOST,
-    port: Number(process.env.PORT),
+    port: Number(process.env.DB_PORT),
     user: process.env.USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
@@ -190,9 +190,9 @@ app.get("/api/pdf", autenticar, async (req,res) => {
 })
  
  
- 
+const port = process.env.PORT || 3000;
 criarBanco()
-.then(() => app.listen(3000, "0.0.0.0", () => console.log("Server rodando")))
+.then(() => app.listen(port, "0.0.0.0", () => console.log("Server rodando")))
 .catch((erro) => {console.log(erro)
     process.exit(1)
 })
