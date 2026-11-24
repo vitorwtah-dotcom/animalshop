@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Petshop Manager | Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <strong>Petshop Manager</strong>
+  <nav><a href="index.html">Cadastro</a><a href="login.html">Área administrativa</a></nav>
+</header>
+<main class="login-main">
+  <section>
+    <h1>Área administrativa</h1>
+    <p class="sub">Entre para consultar os atendimentos e relatórios.</p>
+    <form id="formLogin" class="card">
+      <label>E-mail<input type="email" id="email" required autocomplete="username"></label>
+      <label>Senha<input type="password" id="senha" required autocomplete="current-password"></label>
+      <button type="submit" id="btnLogin">Entrar</button>
+      <p id="msgLogin" class="msg" role="status"></p>
+    </form>
+  </section>
+</main>
+<script src="login.js"></script>
+</body>
+</html>

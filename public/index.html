@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Petshop Manager</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <strong>Petshop Manager</strong>
+  <nav><a href="index.html">Cadastro</a><a href="login.html">Área administrativa</a></nav>
+</header>
+ 
+<main>
+  <section id="telaCadastro">
+    <h1>Cadastro de atendimento</h1>
+    <p class="sub">Registre os serviços realizados no petshop.</p>
+    <form id="formAtendimento" class="card">
+      <div class="grid">
+        <label>Nome do tutor<input name="tutor" id="tutor" required maxlength="100"></label>
+        <label>Nome do pet<input name="pet" id="pet" required maxlength="100"></label>
+        <label>Espécie<select name="especie" id="especie" required><option value="">Selecione</option><option>Cachorro</option><option>Gato</option><option>Outro</option></select></label>
+        <label>Serviço<input name="servico" id="servico" required maxlength="100" placeholder="Ex.: Banho"></label>
+        <label>Valor (R$)<input name="valor" id="valor" type="number" min="0" step="0.01" required></label>
+        <label>Data<input name="data" type="date" id="data" required></label>
+      </div>
+      <p><button type="submit" id="btnSalvar">Salvar atendimento</button></p>
+      <div id="msgCadastro" class="msg"></div>
+    </form>
+  </section>
+</main>
+ 
+<script src="script.js"></script>
+</body>
+</html>
